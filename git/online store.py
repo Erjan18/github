@@ -22,24 +22,32 @@ catalogue = {'microphone':1500,'air-pods':4000,'beats':8000,
              'Apple Watch':8000}
 
 a = []
-num = 4
+num = 2
 def cartage():
-    for i in range(4):
-        product = input()
+    for i in range(2):
+        product = input('Введите товар для покупки:')
         a.append(product)
     return a
 purchace = cartage()
 
+login = 'user123'
+password = 'ewr234'
+user_check = input('имя')
+password_check = input('пароль')
 def buy(purchace):
     if auth(login=login, password=password):
-        money = 100000
+        money = int(input())
+        total_money = money
         for let in purchace:
             if let in catalogue:
                 key_price = catalogue[let]
                 money = counter(money,key_price)
-        return money
+                result = total_money - money
+        return result
     else:
+
         return 'Войдите в систему'
+
 print(buy(purchace))
 
 
